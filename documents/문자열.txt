@@ -1,0 +1,50 @@
+메소드 작성방법
+* 작성법 : method(Type|Type... name) | returnType : desc
+- Return void시 생략
+
+## 문자열
+
+문자열은 참조타입이다. 그리고, 불변성을 가진다.
+c++처럼 str[4]와 같이 [] 연산을 사용하는게 불가능하다.
+
+- charAt(idx) : 해당 인덱스에 있는 char을 반환.(수정,삭제 x)
+- length()
+- equals()
+- toLowerCase(),toUpperCase()
+- Contains()
+- Split()
+- replace()
+
+#### 문자열을 바꾸는 방법
+
+문자열을 바꾸는 방법은 새롭게 대체하는 방식으로 이루어질 수 있다.
+
+- toCharArray() : string을 char형태의 배열로 바꾸는 메소드. 추후에 또 string으로 다시 변경. new String(char[] arr)
+- subString() : 문자열의 일부분을 잘라내는 메소드로, 문자열을 새롭게 만들어 낼 수 있음.
+- Stringbuilder : 문자열을 만들어내는 객체로, 수정과 편집에 용이하다.
+
+### Stringbuilder
+
+String을 생성하는 객체. immutable하지 않다. 조작이 가능한 형태로,배열처럼 사용할 수 있음.
+문자열 연산을 자주하거나, 문자열을 다룰 때 자주 사용한다.
+
+#### 선언
+StringBuilder sb = new StringBuilder();
+
+#### 메소드
+- append(String|Int|Double|char param) | StringBuilder : 현재 sb가 갖고있는 값에 문자를 추가하는 메소드 입니다.
+- insert(int offset,String|char.. str) | StringBuilder : 해당 offset(위치)에 str을 추가하는 메소드 입니다.
+- subString(int st,int end)| StringBuilder : 문자열을 인덱싱하는 기능입니다. [start,end) 범위를 잘라냅니다. 한국어로하면 start부터 end 앞까지.
+ex. sb = "1234567", sb.substring(2,5) : "345"
+- toString() | String : sb객체를 String 객체로 반환합니다.
+- reverse() | StringBuilder : 문자열 전체를 뒤집습니다.
+
+### 대문자인지, 소문자인지 확인하기
+
+대문자/소문자인지 구분하는 건 한 글자(Character)에 대한 이야기이다.
+따라서, Character클래스에서 제공되는 메소드를 이용하면 된다.
+
+- isUpperCase(char|int value) | boolean : 대문자인지 확인한 뒤, true/false를 반환합니다.
+- isLowerCase(char|int value) | boolean : 소문자인지 확인한 뒤, true/false를 반환합니다.
+
+### 문자열 맵핑

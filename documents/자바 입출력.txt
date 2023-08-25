@@ -1,0 +1,40 @@
+
+### 입력
+#### Scanner 객체
+
+Scanner sc = new Scanner(System.in);
+띄워쓰기와 엔터를 경계로 입력값을 인식함.
+
+#### BufferedReader 객체
+
+엔터를 경게로 입력값을 받음. 입력된 모든 값을 String으로 처리함.
+Scanner에 비해서 빠르다는 장점이 있음.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String s = br.readline();
+
+하지만, 한줄을 통째로 읽기 때문에 추후의 처리가 필요한 경우가 많음.
+
+#### 쉼표, 공백 등을 기준으로 입력받기
+
+- StringTokenizer(BufferedReader,args)|StringTokenizer: args를 기준으로 token생성. 만약 ","라면 쉼표를 기준으로 split. default는 스페이스바(공백)
+- nextToken() | String : StringTokenizer 객체의 Token을 반환하는 함수. "String객체"를 반환한다. 따라서, 정수로 처리하고 싶다면 ParseInt를 이용하자.
+
+Example Code
+```
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine()); //공백단위로 읽어드릴수 있는 라인 추가
+        int c = Integer.parseInt(st.nextToken()); //한줄에서 공백 단위로 읽음
+        int d = Integer.parseInt(st.nextToken()); //한줄에서 공백 단위로 읽음
+        System.out.println(c + " " + d);
+
+        st = new StringTokenizer(br.readLine(),","); // , 단위로 읽어드릴수 있는 라인 추가
+        int e = Integer.parseInt(st.nextToken()); //한줄에서 , 단위로 읽음
+        int f = Integer.parseInt(st.nextToken()); //한줄에서 , 단위로 읽음
+```
+#### 2차원 맵 입력받기
+
+#### 절대값
+Math.abs(int) : 절댓값을 계산하는 메서드이다.
+
+
